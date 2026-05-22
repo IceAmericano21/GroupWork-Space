@@ -1,0 +1,83 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.login-wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f4f6f9;
+}
+
+/* 1. Tạo cái khung (Card) màu trắng bọc tất cả lại */
+.login-card {
+    background-color: white; /* Tô nền trắng để tách biệt với nền xám bọc ngoài */
+    padding: 40px;           /* Tạo khoảng trống từ viền đập vào trong */
+    border-radius: 12px;     /* Bo tròn 4 góc */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08); /* Đổ bóng mờ cho chiếc hộp nổi lên */
+    width: 100%;
+    max-width: 400px;        /* Giới hạn độ rộng của khung */
+}
+
+/* 2. Ép Email, Mật khẩu, Nút bấm bên trong form phải xếp dọc chồng lên nhau */
+.login-card form {
+    display: flex;
+    flex-direction: column; /* Lệnh ép xếp hàng dọc */
+    gap: 15px;              /* Tạo khoảng cách đều đặn 15px giữa các ô */
+    margin-top: 25px;
+    margin-bottom: 20px;
+}
+
+/* Căn giữa mấy cái chữ tiêu đề luôn cho đẹp */
+.login-card h1, .login-card p {
+    text-align: center;
+}
+
+/* Làm đẹp ô nhập liệu (Input) */
+.login-card input {
+    padding: 12px 15px;      /* Đẩy viền ra xa, tạo không gian thở cho chữ */
+    border: 1px solid #ccc;  /* Viền mỏng màu xám nhạt */
+    border-radius: 6px;      /* Bo góc nhẹ nhàng */
+    font-size: 14px;         /* Kích thước chữ vừa đọc */
+    outline: none;           /* Xóa cái viền đen thô kệch mặc định của trình duyệt */
+    transition: all 0.3s ease; /* Tạo độ mượt khi có hiệu ứng */
+}
+
+/* Hiệu ứng khi người dùng click vào ô nhập liệu (Focus) */
+.login-card input:focus {
+    border-color: #007bff;   /* Viền đổi sang màu xanh dương công nghệ */
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.3); /* Tỏa sáng nhẹ xung quanh */
+}
+
+/* Làm đẹp nút Đăng nhập (Button) */
+.login-card button {
+    padding: 12px;
+    background-color: #007bff; /* Nền màu xanh dương */
+    color: white;              /* Chữ màu trắng */
+    border: none;              /* Xóa viền */
+    border-radius: 6px;        /* Bo góc giống ô input */
+    font-size: 16px;
+    font-weight: bold;         /* In đậm chữ */
+    cursor: pointer;           /* Đổi con trỏ chuột thành hình bàn tay khi rê vào */
+    transition: background-color 0.3s ease;
+}
+
+/* Hiệu ứng khi người dùng rê chuột qua nút bấm (Hover) */
+.login-card button:hover {
+    background-color: #0056b3; /* Nền tối đi một chút tạo cảm giác đang bấm */
+}
+
+/* Trang trí dòng chữ "Chưa có tài khoản?" ở dưới cùng */
+.login-card a {
+    color: #007bff;
+    text-decoration: none; /* Xóa gạch chân mặc định của link */
+    font-weight: bold;
+}
+
+.login-card a:hover {
+    text-decoration: underline; /* Chỉ hiện gạch chân khi rê chuột vào */
+}
