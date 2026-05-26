@@ -81,3 +81,106 @@
 .login-card a:hover {
     text-decoration: underline; /* Chỉ hiện gạch chân khi rê chuột vào */
 }
+
+.dashboard-container {
+    display: flex; /* Bật flexbox để sidebar và main-content nằm ngang */
+    height: 100vh; /* Cao bằng đúng màn hình máy tính */
+    background-color: #f8f9fa;
+}
+
+/* Thanh bên trái: cố định độ rộng */
+.sidebar {
+    width: 260px;
+    background-color: #1e293b; /* Màu xanh đen đậm chất công nghệ */
+    color: white;
+    padding: 24px;
+}
+
+/* Không gian bên phải: tự động húp trọn vùng màn hình còn lại */
+.main-content {
+    flex: 1; /* Chiếm toàn bộ không gian còn lại */
+    padding: 30px;
+    overflow-y: auto; /* Nếu nội dung quá dài thì tự xuất hiện thanh cuộn */
+}
+
+/* --- TRANG TRÍ THANH SIDEBAR BÊN TRÁI --- */
+
+/* 1. Làm đẹp chữ Logo TaskFlow */
+.sidebar .logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #ffffff;
+    margin-bottom: 40px; /* Tạo khoảng cách xa với menu bên dưới */
+    letter-spacing: 1px; /* Giãn chữ ra một chút cho sang */
+}
+
+/* 2. Ép các đường link trong menu phải xếp hàng dọc */
+.sidebar .menu {
+    display: flex;
+    flex-direction: column; /* Lệnh thần thánh ép các nút xếp hàng dọc */
+    gap: 10px;              /* Khoảng cách giữa các nút menu */
+}
+
+/* 3. Làm đẹp cho từng nút menu (Thẻ a) */
+.sidebar .menu a {
+    color: #94a3b8;         /* Màu xám nhẹ, không bị chói quá */
+    text-decoration: none;  /* Xóa gạch chân đáng ghét */
+    padding: 12px 16px;     /* Tạo cái khung vô hình xung quanh chữ */
+    border-radius: 8px;     /* Bo góc cái khung đó */
+    font-size: 16px;
+    font-weight: 500;
+    transition: all 0.2s ease; /* Tạo độ mượt khi rê chuột */
+}
+
+/* 4. Hiệu ứng khi rê chuột vào nút menu (Hover) */
+.sidebar .menu a:hover {
+    background-color: rgba(255, 255, 255, 0.05); /* Nền sáng lên một chút */
+    color: #ffffff;                              /* Chữ hóa trắng sáng */
+}
+
+/* 5. Trạng thái nút đang được chọn (Active) */
+.sidebar .menu a.active {
+    background-color: #007bff; /* Nút được chọn sẽ có nền xanh dương */
+    color: #ffffff;            /* Chữ trắng */
+}
+
+.content-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.btn-add-task{
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+}
+/*Chia thành 3 cột Kaban*/
+
+.kanban-board {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Lệnh thần thánh chia đều màn hình thành 3 cột bằng nhau */
+    gap: 20px; /* Khoảng cách giữa các cột */
+    align-items: flex-start;
+}
+
+/* Trang trí sơ bộ cho từng cột */
+.kanban-column {
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+    border-top: 4px solid #cbd5e1; /* Tạo một cái đường viền mờ phía trên đỉnh cột */
+}
+
+/* Tên của cột (Ví dụ: Cần làm, Đang làm...) */
+.kanban-column h3 {
+    font-size: 16px;
+    color: #334155;
+    margin-bottom: 15px;
+}
